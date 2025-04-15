@@ -30,18 +30,21 @@ export default function AdminPage() {
   const [searchQuery, setSearchQuery] = useState('');
   
   // Fetch all users
-  const { data: users, isLoading: usersLoading, refetch: refetchUsers } = useQuery({
+  const { data: users, isLoading: usersLoading, refetch: refetchUsers } = useQuery<any[]>({
     queryKey: ['/api/admin/users'],
+    enabled: !!user && isAdmin(user)
   });
   
   // Fetch all writings
-  const { data: writings, isLoading: writingsLoading, refetch: refetchWritings } = useQuery({
+  const { data: writings, isLoading: writingsLoading, refetch: refetchWritings } = useQuery<any[]>({
     queryKey: ['/api/admin/writings'],
+    enabled: !!user && isAdmin(user)
   });
   
   // Fetch all challenges
-  const { data: challenges, isLoading: challengesLoading, refetch: refetchChallenges } = useQuery({
+  const { data: challenges, isLoading: challengesLoading, refetch: refetchChallenges } = useQuery<any[]>({
     queryKey: ['/api/challenges'],
+    enabled: !!user && isAdmin(user)
   });
   
   // Set page title

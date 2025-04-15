@@ -6,6 +6,7 @@ import ProfilePage from "@/pages/profile-page";
 import WritingPage from "@/pages/writing-page";
 import CreateWritingPage from "@/pages/create-writing-page";
 import ExplorePage from "@/pages/explore-page";
+import AdminPage from "@/pages/admin-page";
 import NotFound from "@/pages/not-found";
 import { ProtectedRoute } from "@/lib/protected-route";
 
@@ -16,6 +17,7 @@ function Router() {
       <Route path="/auth" component={AuthPage} />
       <Route path="/explore" component={ExplorePage} />
       <ProtectedRoute path="/create" component={CreateWritingPage} />
+      <ProtectedRoute path="/admin" component={AdminPage} />
       <Route path="/profile/:id" component={ProfilePage} />
       <Route path="/writing/:id" component={WritingPage} />
       <Route component={NotFound} />
