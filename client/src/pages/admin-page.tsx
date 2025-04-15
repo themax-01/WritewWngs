@@ -140,28 +140,28 @@ export default function AdminPage() {
   });
 
   // Filter data based on search query
-  const filteredUsers = users?.filter((user: any) => 
+  const filteredUsers = users ? users.filter((user: any) => 
     searchQuery ? 
       user.username.toLowerCase().includes(searchQuery.toLowerCase()) || 
       user.fullName.toLowerCase().includes(searchQuery.toLowerCase()) || 
       user.email.toLowerCase().includes(searchQuery.toLowerCase())
     : true
-  );
+  ) : [];
   
-  const filteredWritings = writings?.filter((writing: any) => 
+  const filteredWritings = writings ? writings.filter((writing: any) => 
     searchQuery ? 
       writing.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
       writing.author?.username.toLowerCase().includes(searchQuery.toLowerCase()) ||
       writing.category.toLowerCase().includes(searchQuery.toLowerCase())
     : true
-  );
+  ) : [];
   
-  const filteredChallenges = challenges?.filter((challenge: any) => 
+  const filteredChallenges = challenges ? challenges.filter((challenge: any) => 
     searchQuery ? 
       challenge.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
       challenge.description.toLowerCase().includes(searchQuery.toLowerCase())
     : true
-  );
+  ) : [];
   
   // Don't render anything while checking authorization
   if (!user || !isAdmin(user)) {
@@ -570,7 +570,7 @@ export default function AdminPage() {
                                 {challenge.endDate ? new Date(challenge.endDate).toLocaleDateString() : 'No end date'}
                               </TableCell>
                               <TableCell>
-                                <Badge variant={isActive ? "success" : "destructive"}>
+                                <Badge variant={isActive ? "default" : "destructive"} className={isActive ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300" : ""}>
                                   {isActive ? 'Active' : 'Ended'}
                                 </Badge>
                               </TableCell>
