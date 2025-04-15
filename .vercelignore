@@ -1,0 +1,15 @@
+# Development files
+node_modules
+.git
+.github
+.env*
+!.env.example
+
+# Source files that are only needed for development
+*.log
+*.lock
+*.DS_Store
+
+# Specific to project
+.replit
+replit.nix
