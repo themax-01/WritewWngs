@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Pencraft Writing Platform
 
 A full-stack writing platform where users can read, upload writings, and interact with authors.
@@ -136,3 +137,6 @@ PORT=5000 (optional)
 ## License
 
 MIT
+=======
+# WritewWngs
+>>>>>>> 1bd37d9a8e06283ddbc882d75b246eea965b2d13
